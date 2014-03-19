@@ -61,7 +61,14 @@ FakeDate.now = function () {
   return Math.round(t);
 };
 
-// TODO export for commonjs, amd, etc.
-window.rafty = { enable: enable, disable: disable, tick: tick };
+var rafty = { enable: enable, disable: disable, tick: tick };
 
-})(window);
+if (typeof define === 'function' && define.amd) {
+  define(rafty);
+} else if (typeof exports === 'object') {
+  module.exports = rafty;
+} else {
+  window.rafty = rafty;
+}
+
+})(this);
