@@ -15,8 +15,8 @@ Fake requestAnimationFrame for sensible unit testing
 
     rafty.tick(1000);
 
-    console.log(frames) // 60
-    console.log(diff); // ~1000
+    console.log(frames) // 50
+    console.log(diff); // 1000
 
     rafty.disable();
 
@@ -32,5 +32,5 @@ Replaces `requestAnimationFrame` with a fake and freezes time at the 2nd Jan 197
 Restores the fake `requestAnimationFrame` and unfreezes time.
 
 ### .tick(millis)
-Advances time incrementally by the given milliseconds. At every 16.666 millis (60FPS) any `requestAnimationFrame` handlers you've registered will be called.
+Advances time incrementally by the given milliseconds. Every 20 millis (50FPS) any `requestAnimationFrame` handlers you've registered will be called.
 

@@ -1,0 +1,18 @@
+<script src="rafty.js"></script>
+<script>
+    rafty.enable();
+    var then = performance.now();
+    var now;
+    requestAnimationFrame(function () {
+      now = performance.now();
+    });
+
+    rafty.tick(1000);
+
+    console.log(then);
+    console.log(now);
+    // assert.equal(then, 86400000);
+    // assert.equal(now, 86401000);
+
+    rafty.disable();
+</script>

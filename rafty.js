@@ -1,5 +1,5 @@
 (function (window) {
-var FPS = 60,
+var FPS = 50,
     ONE_FRAME = 1000 / FPS,
     handlers = [],
     start = 864e5,

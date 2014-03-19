@@ -61,14 +61,14 @@ describe('rafty', function () {
 
     it('advances time', function () {
       rafty.tick();
-      expect(Date.now()).to.equal(864e5 + 17);
-      expect(performance.now()).to.equal(864e5 + 16.6666666667);
+      expect(Date.now()).to.equal(864e5 + 20);
+      expect(performance.now()).to.equal(864e5 + 20);
       rafty.tick();
-      expect(Date.now()).to.equal(864e5 + 33);
-      expect(performance.now()).to.equal(864e5 + 33.33333334);
+      expect(Date.now()).to.equal(864e5 + 40);
+      expect(performance.now()).to.equal(864e5 + 40);
       rafty.tick(500);
-      expect(Date.now()).to.equal(864e5 + 533);
-      expect(performance.now()).to.equal(864e5 + 533.33333334);
+      expect(Date.now()).to.equal(864e5 + 540);
+      expect(performance.now()).to.equal(864e5 + 540);
     });
 
     it('passes performance.now to the handler', function () {
@@ -77,13 +77,13 @@ describe('rafty', function () {
         t = now;
       });
       rafty.tick();
-      expect(t).to.equal(86400016.66666667);
+      expect(t).to.equal(86400020);
     });
 
     describe('when given an integer', function () {
       it('plays frames for that number of millis', function () {
         rafty.tick(1000);
-        expect(i).to.equal(60);
+        expect(i).to.equal(50);
       });
 
       it('advances times', function () {
