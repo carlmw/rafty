@@ -5,6 +5,7 @@
   "scripts": {
     "test": "open test/test.html"
   },
+  "main": "rafty",
   "devDependencies": {
     "chai": "~1.9.0",
     "mocha": "~1.18.0"
